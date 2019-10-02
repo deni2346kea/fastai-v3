@@ -9,8 +9,8 @@ from starlette.middleware.cors import CORSMiddleware
 from starlette.responses import HTMLResponse, JSONResponse
 from starlette.staticfiles import StaticFiles
 
-export_file_url = 'https://www.googleapis.com/drive/v3/files/1Dvv0XRMCzwwYsC_gNrh-UBXSMVChyr0-?alt=media&key=AIzaSyA4Zswjz9wGrN5NWWDEr5ldKP3UgC7dUZ8'
-export_file_name = 'export.pkl'
+export_file_url = 'https://www.googleapis.com/drive/v3/files/1kR38OkaoCv9taomvdCIq4_i8NxZ4m47W?alt=media&key=AIzaSyDTonVfSfB93hTYNNnBxXskliVVMtBxnlg'
+export_file_name = 'export-1.1.pkl'
 
 classes = ['PNEUMONIA', 'NORMAL']
 path = Path(__file__).parent

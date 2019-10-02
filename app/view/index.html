@@ -1,40 +1,429 @@
-<html lang='en'>
+<!DOCTYPE html>
+<html>
 <head>
-  <meta charset='utf-8'>
-  <link rel='stylesheet' href='../static/style.css'>
-  <script src='../static/client.js'></script>
+    <meta charset='utf-8'>
+    <link rel='stylesheet' href='../static/style.css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src='../static/client.js'></script>
+    
+  
+<title>Valens.ai</title>
+<link href="https://fonts.googleapis.com/css?family=Fira+Sans&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<script src="https://kit.fontawesome.com/9a1493e0a1.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+
+
+
+
+<script>
+    $(document).ready(function(){
+      $("#pop").click(function(){
+        $("#result-label").empty();
+      });
+    });
+    </script>
+
 </head>
 <body>
-<div>
-  <div class='center'>
-    <div class='title'> Pneumonia Detection <img src="https://img.icons8.com/office/40/000000/lungs.png"></div>
-    <p>
-      Upload <strong>X-ray</strong> images to get prediction!
-    </p>
-    <div class='content'>
-      <div class='no-display'>
-        <input id='file-input'
-               class='no-display'
-               type='file'
-               name='file'
-               accept='image/*'
-               onchange='showPicked(this)'>
-      </div>
-      <button class='choose-file-button' type='button' onclick='showPicker()'>Select Image</button>
-      <div class='upload-label'>
-        <label id='upload-label'>No file chosen</label>
-      </div>
-      <div>
-        <img id='image-picked' class='no-display' alt='Chosen Image' height='200'>
-      </div>
-      <div class='analyze'>
-        <button id='analyze-button' class='analyze-button' type='button' onclick='analyze()'>Analyze</button>
-      </div>
-      <div class='result-label'>
-        <label id='result-label'></label>
-      </div>
+
+
+  
+
+
+
+<html>
+    <div class="wraper">
+        <div class="relative">
+            <div class="absoluteH1">
+                <div class="H11">Public</div>
+                <div class="H12">
+                  <div class="H12logo">Valens.ai</div>
+                </div>
+                <div class="H13">
+                  <div class="H13title"><i class="far fa-folder-open fa-lg" style="color: #777"></i> ChestX-ray</div>
+                </div>
+                <div class="H14">
+                    <div class="H14profil"><i class="far fa-user-circle fa-2x" style="color: #777"></i></div>
+                    <div class="H14arrow"><i class="fas fa-angle-down fa-1x" style="color: #777"></i></div>
+                </div>
+            </div>
+
+            <div class="absoluteH2">
+                <div class="H21">
+                    <div class="H21icon"><i class="fas fa-bars" style="color: #5c5c5c"></i></div>
+                </div>
+                <div class="H22">
+                    <div class="H22label"><i class="fas fa-tags" style="color: #777"></i> Labels</div>
+                </div>
+                <div class="H23">
+                  <div class="H23logo"><i class="far fa-folder fa-lg" style="color: #777"></i></div>
+                </div>
+                <div class="H24">
+                    <div class="H24icon-bar">
+                        <a href="#"><i class="fas fa-th-large"></i></a> 
+                        <a href="#"><i class="fas fa-ruler"></i></a> 
+                        <a href="#"><i class="fas fa-undo"></i></a> 
+                        <a href="#"><i class="far fa-copy"></i></a>
+                        <a href="#"><i class="fas fa-search-plus"></i></a> 
+                        <a href="#"><i class="fas fa-search-minus"></i></a> 
+
+                        
+                        <div class="tooltip-H24icon-barT1"> <a href="#" id="sep"><i class="fas fa-adjust"></i></a> 
+                          <span class="tooltiptext-H24icon-barT1">Sepia</span>
+                        </div>
+                        
+                        <div class="tooltip-H24icon-barT2"> <a href="#" id='inv'><i class="fas fa-tint"></i></a> 
+                          <span class="tooltiptext-H24icon-barT2">Invert Colors</span>
+                        </div>
+
+                        <div class="tooltip-H24icon-barT3"> <a href="#" id='brh'><i class="fas fa-grip-lines-vertical"></i></a>
+                          <span class="tooltiptext-H24icon-barT3">Brightness</span>
+                        </div>
+
+                        <a href="#"><i class="fas fa-share-alt"></i></a>
+                        <a href="#"><i class="fas fa-draw-polygon"></i></a> 
+                        <a href="#"><i class="fas fa-retweet"></i></a> 
+                        <a href="#"><i class="fa fa-envelope"></i></a> 
+                        <a href="#"><i class="fa fa-globe"></i></a>
+                        <a href="#"><i class="fa fa-trash"></i></a>
+                      </div>
+                </div>
+                <a href="#">
+                <div class="H25">
+                    <div class="H25logo"><i class="far fa-clock fa-lg" style="color: #777"></i></div>
+                  </div>
+                </a>
+            </div>
+
+            <div class="absoluteB1">
+                <div class="B11">
+                    <div class="B11icon-bar">
+
+                        <div class="tooltip-B11icon-barT1"> <a class="B11active" href="#"><i class="far fa-image"></i></a>
+                          <span class="tooltiptext-B11icon-barT1">Workspace</span>
+                        </div> 
+
+                        <div class="tooltip-B11icon-barT2"> <a href="#"><i class="fas fa-cube"></i></a> 
+                          <span class="tooltiptext-B11icon-barT2">Models</span>
+                        </div>
+
+
+                        <div class="tooltip-B11icon-barT3"> <a href="#"><i class="fas fa-code"></i></a>
+                          <span class="tooltiptext-B11icon-barT3">Code</span>
+                        </div> 
+
+                        <div class="tooltip-B11icon-barT4"> <a href="#"><i class="fas fa-user-friends"></i></a>
+                          <span class="tooltiptext-B11icon-barT4">Users</span>
+                        </div> 
+
+                        <div class="tooltip-B11icon-barT4"> <a href="#"><i class="far fa-comment-alt"></i></a> 
+                          <span class="tooltiptext-B11icon-barT4">Chat</span>
+                        </div>
+
+
+                      </div>
+                </div>
+                <div class="B12">
+                    <div class="B12icon-bar">
+
+                        <div class="tooltip-B12icon-barT1"> <a href="#"><i class="fas fa-info-circle"></i></a> 
+                          <span class="tooltiptext-B12icon-barT1">Info</span>
+                        </div>
+
+                        <div class="tooltip-B12icon-barT2"> <a href="#"><i class="fas fa-microchip"></i></a>
+                          <span class="tooltiptext-B12icon-barT2">GPU</span>
+                        </div>
+
+                          <div class="tooltip-B12icon-barT3"> <a href="#"><i class="fas fa-cog"></i></a> 
+                            <span class="tooltiptext-B12icon-barT3">Settings</span>
+                        </div>
+
+                      </div>
+                </div>
+            </div>
+
+            <div class="absoluteB2">
+              <div class="B21">
+                <div class="B21label"><i class="fas fa-dharmachakra"></i> Label Controls</div>
+                <div class="B21text">Label Group</div>
+                <div class="B21title">Bispebjerg Hospital NIH</div>
+                <div class="B21text2">Label Encoding</div>
+                <div class="B21title2">One Hot Encoding</div>
+              </div>
+
+              <div class="B22">
+
+                <div class="B22box1">No Finding
+                  <div class="B22logo"><i class="fas fa-globe"></i> image</div>
+                </div>
+
+                <div class="B22box2">Atelectasis
+                    <div class="B22logo"><i class="fas fa-globe"></i> image</div>
+                  </div>
+
+                  <div class="B22box3">Cardiomegaly
+                      <div class="B22logo"><i class="fas fa-globe"></i> image</div>
+                    </div>
+
+                  <div class="B22box4">Effusion
+                      <div class="B22logo"><i class="fas fa-globe"></i> image</div>
+                    </div>
+                  
+                  <div class="B22box5">Infiltration
+                      <div class="B22logo"><i class="fas fa-globe"></i> image</div>
+                    </div>
+
+                  <div class="B22box6">Mass
+                      <div class="B22logo"><i class="fas fa-globe"></i> image</div>
+                    </div>
+
+                  <div class="B22box7">Nodule
+                      <div class="B22logo"><i class="fas fa-globe"></i> image</div>
+                    </div>
+
+                  <div class="B22box8">Pneumonia
+                      <div class="B22logo"><i class="fas fa-globe"></i> image</div>
+                    </div>
+
+                  <div class="B22box9">Pneumothorax
+                      <div class="B22logo"><i class="fas fa-globe"></i> image</div>
+                    </div>
+
+                  <div class="B22box10">Consolidation
+                      <div class="B22logo"><i class="fas fa-globe"></i> image</div>
+                    </div>
+
+                  <div class="B22box11">Edema
+                      <div class="B22logo"><i class="fas fa-globe"></i> image</div>
+                    </div>
+
+                  <div class="B22box12">Emphysema
+                      <div class="B22logo"><i class="fas fa-globe"></i> image</div>
+                    </div>
+
+                  <div class="B22box13">Fibrosis
+                      <div class="B22logo"><i class="fas fa-globe"></i> image</div>
+                    </div>
+
+                  <div class="B22box14">Pleural Thickening
+                      <div class="B22logo"><i class="fas fa-globe"></i> image</div>
+                    </div>
+
+                  <div class="B22box15">Hernia
+                      <div class="B22logo"><i class="fas fa-globe"></i> image</div>
+                    </div>
+
+              </div>
+            </div>
+
+            <div class="absoluteB3">
+              <div class="B31">
+                <div class="B31title">Dataset <i class="fas fa-sort-down"></i></div>
+                <div class="B31icon-box">
+                    <a href="#" onclick='showPicker()' id="pop"><i class="fas fa-upload"></i></a> Upload
+
+                    <a href="#" id='analyze-button' class='analyze-button' onclick='analyze()'><i class="fas fa-diagnoses"></i></a> Analyze
+
+                    <a href="#"><i class="fas fa-file-download"></i></a> Save
+                </div>
+              </div>
+
+              <div class="B32">
+                <div class="B32icon-bar"> 
+
+                    <div class="tooltip-B32icon-barT1"> <a href="#"><i class="fas fa-paw"></i></a> 
+                      <span class="tooltiptext-B32icon-barT1">Show mouse commands</span>
+                        </div>
+
+                        <div class="tooltip-B32icon-barT2"> <a href="#"><i class="fas fa-keyboard"></i></a> 
+                          <span class="tooltiptext-B32icon-barT2">Show keyboard shortcuts</span>
+                        </div>
+
+                        <div class="tooltip-B32icon-barT3"> <a href="#"><i class="far fa-question-circle"></i></a> 
+                          <span class="tooltiptext-B32icon-barT3">Help</span>
+                        </div>
+
+                        <div class="tooltip-B32icon-barT4"> <a href="#"><i class="fas fa-inbox"></i></a> 
+                          <span class="tooltiptext-B32icon-barT4">Send Feedback</span>
+                        </div>
+
+                </div>
+              </div>
+
+            </div>
+
+            <div class="absoluteB4">
+              <div class="B4left-top">
+                  <div class="B4left-top1">
+                    <p>Patient Name</p>
+                    <label id='upload-label' style="color:white;">No file chosen</label>
+                  </div>
+
+                  <div class="B4left-top2">
+                      <p>patient sex</p>
+                      <p>m</p>
+                    </div>
+                
+                  <div class="B4left-top3">
+                      <p>exam date</p>
+                      <p>Jan 09/19/2019</p>
+                    </div>
+
+                  <div class="B4left-top4">
+                      <p>exam time</p>
+                      <p>12:00:01 am</p>
+                    </div>
+               </div>
+
+               <div class="B4right-top">
+                  <div class="B4right-top1">
+                    <p>Modality</p>
+                    <p>cr</p>
+                  </div>
+
+                  <div class="B4right-top2">
+                      <p>body part</p>
+                      <p>chest</p>
+                    </div>
+                
+                  <div class="B4right-top3">
+                      <p>series desc</p>
+                      <p>view: pa</p>
+                    </div>
+
+                  <div class="B4right-top4">
+                      <p>image</p>
+                      <p>1</p>
+                    </div>
+               </div>
+
+               <div class="B4left-bottom">
+                  <div class="B4left-bottom1">
+                    <p>PatientID</p>
+                    <p>CRX_14000000045</p>
+                  </div>
+
+                  <div class="B4left-bottom2">
+                      <p>StudyinstanceUID</p>
+                      <p>1.276.0.734000834.2.4.567.88885331243.23423423423324.24234234</p>
+                    </div>
+               </div>
+
+               <div class="B4right-bottom">
+                  <div class="B4right-bottom1">
+                    <p>SeriesinstanceUID</p>
+                    <p>1.276.0.734000834.2.4.567.88885331243.23423423423324.24234234</p>
+                  </div>
+
+                  <div class="B4right-bottom2">
+                      <p>SOAPinstanceUID</p>
+                      <p>1.276.0.734000834.2.4.567.88885331243.23423423423324.24234234</p>
+                    </div>
+               </div>
+
+              <div class="B4canvas">
+                  
+                      <div class='no-display'>
+                        <input id='file-input'
+                               class='no-display'
+                               type='file'
+                               name='file'
+                               accept='image/*'
+                               onchange='showPicked(this)'>
+                      </div>
+ 
+                      <div>
+                          <img id='image-picked' class="no-display" alt='Chosen Image' height='400'>
+                        </div>
+              
+              </div>
+
+              <div class="B4bottom">
+                <div class="B4annotation">Annotations:</div>
+
+                <div class='result-label'>
+                  <label id='result-label'></label>
+                </div>
+               
+              </div>
+            </div>
+
+            <div class="absoluteB5">
+              <div class="B5icon-bar">
+                  <a href="#"><i class="fas fa-circle"></i></a> 
+                  <a href="#"><i class="fas fa-circle"></i></a> 
+                  <a href="#"><i class="fas fa-circle"></i></a> 
+                  <a href="#"><i class="fas fa-circle"></i></a> 
+                  <a href="#"><i class="fas fa-circle"></i></a> 
+                  <a href="#"><i class="fas fa-circle"></i></a> 
+                  <a href="#"><i class="fas fa-circle"></i></a> 
+              </div>
+            </div>
+
+          </div>
     </div>
-  </div>
-</div>
+</html>
+
+
+<script>
+  var action = 1;
+  $("#inv").on("click", viewSomething);
+  
+  function viewSomething() {
+      if ( action == 1 ) {
+        var c = 2;
+        console.log(c);
+        document.getElementById("image-picked").style.filter="invert(100%)";
+          action = 2;
+      } else {
+        var f = 2222;
+        console.log(f);
+        document.getElementById("image-picked").style.filter="none";
+          action = 1;
+      }
+  }
+  </script>
+
+<script>
+  var action = 1;
+  $("#sep").on("click", viewSomething);
+  
+  function viewSomething() {
+      if ( action == 1 ) {
+        var c = 2;
+        console.log(c);
+        document.getElementById("image-picked").style.filter="sepia(100%)";
+          action = 2;
+      } else {
+        var f = 2222;
+        console.log(f);
+        document.getElementById("image-picked").style.filter="none";
+          action = 1;
+      }
+  }
+  </script>
+  
+  
+  <script>
+  var action = 1;
+  $("#brh").on("click", viewSomething);
+  
+  function viewSomething() {
+      if ( action == 1 ) {
+        var c = 2;
+        console.log(c);
+        document.getElementById("image-picked").style.filter="brightness(140%)";
+          action = 2;
+      } else {
+        var f = 2222;
+        console.log(f);
+        document.getElementById("image-picked").style.filter="none";
+          action = 1;
+      }
+  }
+  </script>
 </body>
 </html>
