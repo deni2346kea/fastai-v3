@@ -18,7 +18,7 @@ function analyze() {
   var uploadFiles = el("file-input").files;
   if (uploadFiles.length !== 1) alert("Please select a file to analyze!");
 
-  el("analyze-button").innerHTML = "...";
+  el("analyze-button").innerHTML = "Analyzing...";
   var xhr = new XMLHttpRequest();
   var loc = window.location;
   xhr.open("POST", `${loc.protocol}//${loc.hostname}:${loc.port}/analyze`,
@@ -29,17 +29,13 @@ function analyze() {
   xhr.onload = function(e) {
     if (this.readyState === 4) {
       var response = JSON.parse(e.target.responseText);
-      el("result-label").innerHTML = `<span style='border-radius: 40px; padding: 5px; background: linear-gradient(135deg, rgb(255, 255, 255), rgb(229, 229, 229));'> <i class="fas fa-globe"></i> ${response["result"]}</span>`;
+      el("result-label").innerHTML = `Result = ${response["result"]}`;
     }
-    el("analyze-button").innerHTML = "<i class='fas fa-diagnoses' aria-hidden='true'></i>";
+    el("analyze-button").innerHTML = "Analyze";
   };
 
   var fileData = new FormData();
   fileData.append("file", uploadFiles[0]);
   xhr.send(fileData);
 }
-
-
-
-
 
